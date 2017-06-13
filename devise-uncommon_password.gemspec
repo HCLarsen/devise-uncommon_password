@@ -9,14 +9,15 @@ Gem::Specification.new do |s|
   s.version     = Devise::UncommonPassword::VERSION
   s.authors     = ["Chris Larsen"]
   s.email       = ["clarsenipod@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Devise::UncommonPassword."
-  s.description = "TODO: Description of Devise::UncommonPassword."
+  s.homepage    = "https://github.com/HCLarsen/devise-uncommon_passwords"
+  s.summary     = "Devise extension to prevent user from using a common password."
+  s.description = "Devise extension to prevent user from using a common password."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.1"
+  s.add_dependency "devise", "~> 4.3"
 
   s.add_development_dependency "sqlite3"
 end
