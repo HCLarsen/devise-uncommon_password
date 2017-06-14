@@ -125,6 +125,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  devise (~> 4.3)
   devise-uncommon_password!
   sqlite3
 
