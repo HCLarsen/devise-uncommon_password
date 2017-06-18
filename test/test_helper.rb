@@ -15,14 +15,3 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + "/files"
   ActiveSupport::TestCase.fixtures :all
 end
-
-def common_passwords
-  passwords_file = File.expand_path("./lib/devise/uncommon_password/passwords.txt")
-  passwords = []
-  File.open(passwords_file, "r") do |file|
-    file.each do |password|
-      passwords << password.chomp
-    end
-  end
-  passwords
-end
