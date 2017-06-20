@@ -1,4 +1,4 @@
-# Devise::UncommonPassword
+# Devise Uncommon Password
 devise-uncommon_password is an extension for the devise gem, which prevents users from signing up using one of the 100 most common passwords. Currently, the list of common passwords is derived from the list at  http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time. As devise already rejects passwords less than 8 characters in length, I removed all such passwords from the list, and then selected the top 100 from the remaining passwords.
 
 ## Usage
@@ -13,16 +13,28 @@ gem 'devise-uncommon_password'
 
 And then execute:
 ```bash
-$ bundle
+$ bundle install
 ```
 
-Or install it yourself as:
-```bash
-$ gem install devise-uncommon_password
+Then add the :uncommon_password module to your model:
 ```
+class User < ActiveRecord::Base
+devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :trackable, :validatable, :uncommon_password
+end
+```
+
+And you're ready to go.
 
 ## Contributing
-Contribution directions go here.
+
+You can contribute by doing the following:
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
