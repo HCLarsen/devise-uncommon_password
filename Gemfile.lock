@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     devise-uncommon_password (0.1.0)
-      devise (>= 4.3)
-      rails (>= 5.1.1)
+      devise (>= 3.5)
+      rails (>= 4.2)
 
 GEM
   remote: https://rubygems.org/
@@ -127,8 +127,9 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  devise (~> 4.3)
+  devise (~> 4)
   devise-uncommon_password!
+  rails (~> 5.1.1)
   sqlite3
 
 BUNDLED WITH
