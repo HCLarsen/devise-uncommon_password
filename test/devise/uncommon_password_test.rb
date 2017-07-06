@@ -9,6 +9,13 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     end
   end
 
+  test "should deny case varations of common passwords" do
+    passwords = Devise::Models::UncommonPassword.common_passwords
+    password = passwords.first.upcase
+    user = User.create email:"example@example.org", password: password, password_confirmation: password
+    assert_not user.valid?, "Uppercase common passwords shoud not be valid."    
+  end
+
   test "should accept validation for an uncommon password" do
     password = "fddkasnsdddghjt"
     user = User.create email:"example@example.org", password: password, password_confirmation: password

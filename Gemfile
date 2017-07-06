@@ -13,6 +13,6 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem "rails", "~>5.1.1"
+# gem "rails", "~>5.1.1"
 gem "devise", "~> 4"
 gem 'byebug'

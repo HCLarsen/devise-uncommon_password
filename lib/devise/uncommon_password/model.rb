@@ -27,7 +27,7 @@ module Devise
       private
 
       def not_common_password
-        if Devise::Models::UncommonPassword.common_passwords.include? password
+        if Devise::Models::UncommonPassword.common_passwords.include? password.downcase
           errors.add(:password, "is one of the 100 most common passwords. Please choose something harder to guess.")
         end
       end

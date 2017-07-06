@@ -129,7 +129,6 @@ DEPENDENCIES
   byebug
   devise (~> 4)
   devise-uncommon_password!
-  rails (~> 5.1.1)
   sqlite3
 
 BUNDLED WITH
