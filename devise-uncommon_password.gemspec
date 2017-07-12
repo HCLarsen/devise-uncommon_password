@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Chris Larsen"]
   s.email       = ["clarsenipod@gmail.com"]
   s.homepage    = "https://github.com/HCLarsen/devise-uncommon_passwords"
-  s.summary     = "Devise extension to prevent user from using a common password."
-  s.description = "Devise extension to prevent user from using a common password."
+  s.summary     = "Devise extension to prevent users from using a common password."
+  s.description = "Devise extension to prevent users from using a common password."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
