@@ -13,9 +13,7 @@ module Devise
 
         passwords = []
         File.open(passwords_file, "r") do |file|
-          file.each do |password|
-            passwords << password.chomp
-          end
+          file.each { |password| passwords << password.chomp }
         end
         passwords
       end

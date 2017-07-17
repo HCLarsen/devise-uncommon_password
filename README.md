@@ -1,4 +1,7 @@
 # Devise Uncommon Password
+
+[![Code Climate](https://codeclimate.com/github/HCLarsen/devise-uncommon_password.svg)](https://codeclimate.com/github/HCLarsen/devise-uncommon_password)
+
 Devise::UncommonPassword is an extension for the devise gem, which prevents users from signing up using one of the 100 most common passwords. Currently, the list of common passwords is derived from the list at http://www.passwordrandom.com/most-popular-passwords. As devise already rejects passwords less than 8 characters in length, I removed all such passwords from the list, and then selected the top 100 from the remaining passwords.
 
 ## Installation

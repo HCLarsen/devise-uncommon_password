@@ -11,3 +11,6 @@ test/dummy/tmp/
 
 # Ignore byebug files
 .byebug_history
+
+# Ignore temporary files, including Rubycritic files
+tmp
