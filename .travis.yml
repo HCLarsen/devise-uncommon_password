@@ -8,3 +8,7 @@ rvm:
  gemfile:
   - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-5.0.gemfile
+
+before_script: "bundle update"
+
+script: "bin/test"
