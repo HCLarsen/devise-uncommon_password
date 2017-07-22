@@ -5,9 +5,9 @@ rvm:
  - 2.3
  - 2.4
 
- gemfile:
-  - gemfiles/rails-4.2.gemfile
-  - gemfiles/rails-5.0.gemfile
+gemfile:
+ - gemfiles/rails-4.2.gemfile
+ - gemfiles/rails-5.0.gemfile
 
 before_script: "bundle update"
 
