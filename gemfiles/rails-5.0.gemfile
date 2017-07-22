@@ -1,2 +1,6 @@
+source 'https://rubygems.org'
+
 gem "rails", "~>5.0"
 gem "devise", "~> 4.0"
+
+gemspec :path => "../"
