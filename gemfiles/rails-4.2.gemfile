@@ -1,0 +1,2 @@
+gem "rails", "~>4.2"
+gem "devise", "~> 3.5.1"
