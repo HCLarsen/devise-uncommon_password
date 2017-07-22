@@ -10,6 +10,6 @@ gemfile:
  - gemfiles/rails-5.0.gemfile
  - Gemfile
 
-before_script: "bundle update"
+before_install: "gem update bundler"
 
-script: "bin/test"
+before_script: "bundle update"
