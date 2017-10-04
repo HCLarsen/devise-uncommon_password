@@ -5,15 +5,15 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     passwords = Devise::Models::UncommonPassword.common_passwords
     passwords.each do |password|
       user = User.create email:"example@example.org", password: password, password_confirmation: password
-      assert_not user.valid?, "User with common password shoud not be valid."
+      assert_not user.valid?, "User with common password should not be valid."
     end
   end
 
-  test "should deny case varations of common passwords" do
+  test "should deny case variations of common passwords" do
     passwords = Devise::Models::UncommonPassword.common_passwords
     password = passwords.first.upcase
     user = User.create email:"example@example.org", password: password, password_confirmation: password
-    assert_not user.valid?, "Uppercase common passwords shoud not be valid."
+    assert_not user.valid?, "Uppercase common passwords should not be valid."
     assert_equal ["is a very common password. Please choose something harder to guess."], user.errors[:password]
   end
 
