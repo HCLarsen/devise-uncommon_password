@@ -37,5 +37,22 @@ You can contribute by doing the following:
 * Commit
 * Send a pull request
 
+### Testing contributions
+
+The repository contains a dummy rails app for use as a test harness. To run tests within your cloned
+repository you will need to:
+
+```
+bundle
+cd test/dummy
+bundle exec rails db:migrate
+cd ../..
+```
+
+Once that is done you can execute the test suite with:
+
+```bundle exec rake test```
+
+
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
