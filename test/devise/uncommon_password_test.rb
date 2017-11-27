@@ -22,4 +22,12 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     user = User.create email:"example@example.org", password: password, password_confirmation: password
     assert user.valid?, "User with uncommon password should be valid."
   end
+
+  test "should not attempt to validate if model changed without updating password" do
+    password = "fddkasnsdddghjt"
+    User.create email:"example@example.org", password: password, password_confirmation: password
+
+    update = User.where(email: 'example@example.org').first.update_attributes(email: 'anotherexample@example.org')
+    assert update
+  end
 end
