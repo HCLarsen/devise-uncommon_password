@@ -25,7 +25,7 @@ module Devise
       private
 
       def not_common_password
-        return unless password.present?
+        return unless password_required?
 
         if Devise::Models::UncommonPassword.common_passwords.include? password.downcase
           errors.add(:password, "is a very common password. Please choose something harder to guess.")
