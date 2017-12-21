@@ -19,14 +19,12 @@ module Devise
       end
 
       included do
-        validate :not_common_password
+        validate :not_common_password, if: :password_required?
       end
 
       private
 
       def not_common_password
-        return unless password_required?
-
         if Devise::Models::UncommonPassword.common_passwords.include? password.downcase
           errors.add(:password, "is a very common password. Please choose something harder to guess.")
         end
