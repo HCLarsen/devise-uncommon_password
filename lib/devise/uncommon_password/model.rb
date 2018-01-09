@@ -13,9 +13,10 @@ module Devise
 
         passwords = []
         File.open(passwords_file, "r") do |file|
-          file.each { |password| passwords << password.chomp }
+          file.each { |password| passwords << password.chomp.downcase }
         end
-        passwords
+        passwords.select! {|password| Devise.password_length.include? password.length }
+        passwords[0..99]
       end
 
       included do

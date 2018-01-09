@@ -5,7 +5,7 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     passwords = Devise::Models::UncommonPassword.common_passwords
     passwords.each do |password|
       user = User.create email:"example@example.org", password: password, password_confirmation: password
-      assert_not user.valid?, "User with common password should not be valid."
+      assert_not user.valid?, "User with common password of #{password} should not be valid."
     end
   end
 
@@ -28,5 +28,16 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     user = User.create email:"example@example.org", password: password, password_confirmation: password
 
     assert user.update_attributes(email: 'anotherexample@example.org')
+  end
+
+  test "should always return 100 passwords" do
+    assert_equal Devise::Models::UncommonPassword.common_passwords.size, 100
+  end
+
+  test "should only return passwords of suitable length" do
+    passwords = Devise::Models::UncommonPassword.common_passwords
+    passwords.each do |password|
+      assert Devise.password_length.include? password.length
+    end
   end
 end
