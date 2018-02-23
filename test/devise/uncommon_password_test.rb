@@ -1,6 +1,25 @@
 require 'test_helper'
 
 class Devise::UncommonPassword::Test < ActiveSupport::TestCase
+  test "should return the specified number of passwords" do
+    Devise.password_matches = 1000
+    assert_equal Devise.password_matches, Devise::Models::UncommonPassword.common_passwords.size
+    Devise.password_matches = 100
+  end
+
+  test "should return smaller array when pass_matches is too long" do
+    Devise.password_matches = 10000
+    assert Devise::Models::UncommonPassword.common_passwords.size <= Devise.password_matches
+    Devise.password_matches = 100
+  end
+
+  test "should only return passwords of suitable length" do
+    passwords = Devise::Models::UncommonPassword.common_passwords
+    passwords.each do |password|
+      assert Devise.password_length.include? password.length
+    end
+  end
+
   test "should deny validation for a common password" do
     passwords = Devise::Models::UncommonPassword.common_passwords
     passwords.each do |password|
@@ -28,16 +47,5 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     user = User.create email:"example@example.org", password: password, password_confirmation: password
 
     assert user.update_attributes(email: 'anotherexample@example.org')
-  end
-
-  test "should always return 100 passwords" do
-    assert_equal Devise::Models::UncommonPassword.common_passwords.size, 100
-  end
-
-  test "should only return passwords of suitable length" do
-    passwords = Devise::Models::UncommonPassword.common_passwords
-    passwords.each do |password|
-      assert Devise.password_length.include? password.length
-    end
   end
 end

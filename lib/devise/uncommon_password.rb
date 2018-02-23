@@ -2,6 +2,8 @@ require 'devise'
 require 'devise/uncommon_password/model'
 
 module Devise
+  mattr_accessor :password_matches
+  @@password_matches = 100
   module UncommonPassword
   end
 end

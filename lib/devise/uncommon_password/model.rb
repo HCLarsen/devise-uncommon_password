@@ -16,11 +16,16 @@ module Devise
           file.each { |password| passwords << password.chomp.downcase }
         end
         passwords.select! {|password| Devise.password_length.include? password.length }
-        passwords[0..99]
+        #passwords[0..99]
+        passwords[0..Devise.password_matches-1]
       end
 
       included do
         validate :not_common_password, if: :password_required?
+      end
+
+      module ClassMethods
+        Devise::Models.config(self, :password_matches)
       end
 
       private
