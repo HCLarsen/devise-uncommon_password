@@ -16,4 +16,4 @@ test/dummy/tmp/
 tmp
 
 # Ignore the built gem that uploads to RubyGems.
-.gem
+*.gem
