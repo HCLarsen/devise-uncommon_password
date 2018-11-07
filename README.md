@@ -7,7 +7,7 @@ Devise::UncommonPassword is an extension for the devise gem, which prevents user
 
 ## Usage
 
-Add the ':uncommon_password' module to your model:
+Add the `:uncommon_password` module to your model:
 
 ```ruby
 class AdminUser < ApplicationRecord
