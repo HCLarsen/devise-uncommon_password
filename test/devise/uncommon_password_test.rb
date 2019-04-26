@@ -48,4 +48,10 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
 
     assert user.update_attributes(email: 'anotherexample@example.org')
   end
+
+  test "should run validation without error when password is nil" do
+    user = User.new email:"example@example.org", password: nil
+
+    assert_not user.valid?
+  end
 end
