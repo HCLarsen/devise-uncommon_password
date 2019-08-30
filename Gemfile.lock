@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    devise-uncommon_password (0.3.5)
+    devise-uncommon_password (0.3.6)
       devise (>= 3.5, < 4.7)
       rails (>= 4.2, <= 6.0)
 
