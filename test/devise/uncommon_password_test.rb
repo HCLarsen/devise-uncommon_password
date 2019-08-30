@@ -46,6 +46,6 @@ class Devise::UncommonPassword::Test < ActiveSupport::TestCase
     password = "fddkasnsdddghjt"
     user = User.create email:"example@example.org", password: password, password_confirmation: password
 
-    assert user.update_attributes(email: 'anotherexample@example.org')
+    assert user.update(email: 'anotherexample@example.org')
   end
 end
