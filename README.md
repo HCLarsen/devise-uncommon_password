@@ -30,9 +30,14 @@ Add this line to your application's Gemfile:
 gem 'devise-uncommon_password'
 ```
 
-And then execute:
+Execute:
 ```bash
 $ bundle install
+```
+
+And then:
+```bash
+$ rails generate devise:uncommon_password:install
 ```
 
 ## Contributing
