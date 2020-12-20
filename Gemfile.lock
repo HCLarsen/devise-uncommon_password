@@ -3,7 +3,7 @@ PATH
   specs:
     devise-uncommon_password (0.4.0)
       devise (>= 3.5, < 4.8)
-      rails (>= 4.2, < 6.1)
+      rails (>= 4.2, < 6.2)
 
 GEM
   remote: https://rubygems.org/
