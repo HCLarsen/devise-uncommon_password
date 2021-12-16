@@ -7,8 +7,10 @@ module Devise
     # a common password.
     module UncommonPassword
       extend ActiveSupport::Concern
-      # Returns a list of the 100 most common passwords.
+      # Returns a list of most common passwords.
       def self.common_passwords
+        return @passwords if @passwords
+
         passwords_file = File.join(File.dirname(__FILE__), "passwords.txt")
 
         passwords = []
@@ -16,7 +18,8 @@ module Devise
           file.each { |password| passwords << password.chomp.downcase }
         end
         passwords.select! {|password| Devise.password_length.include? password.length }
-        passwords[0..Devise.password_matches-1]
+
+        @passwords = passwords[0..Devise.password_matches-1].to_set
       end
 
       included do
