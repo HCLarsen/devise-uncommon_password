@@ -59,6 +59,7 @@ You can contribute by doing the following:
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork it
 * Write your changes
+* Test
 * Commit
 * Send a pull request
 
