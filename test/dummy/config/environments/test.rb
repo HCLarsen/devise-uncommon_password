@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Change for Rails 6.0, which deprecated connection_handlers getter and setter.
+  config.active_record.legacy_connection_handling = false
 end
