@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 4.2", "< 7.3"
   s.add_dependency "devise", ">= 3.5", "< 5.0"
 
-  s.add_development_dependency "sqlite3", ">= 1.3.6", "< 1.5"
+  s.add_development_dependency "sqlite3", ">= 1.7.0"
   s.add_development_dependency "sprockets-rails"
 end

@@ -17,3 +17,6 @@ tmp
 
 # Ignore the built gem that uploads to RubyGems.
 *.gem
+
+# Ignore master key for decrypting credentials and more.
+/test/dummy/config/master.key
