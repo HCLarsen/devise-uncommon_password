@@ -3,6 +3,7 @@ language: ruby
 rvm:
  - 2.5
  - 2.6
+ - 3.3
 
 gemfile:
  - gemfiles/rails-5.0.gemfile
@@ -11,6 +12,8 @@ gemfile:
  - gemfiles/rails-6.0.gemfile
  - gemfiles/rails-6.1.gemfile
  - gemfiles/rails-7.0.gemfile
+ - gemfiles/rails-7.1.gemfile
+ - gemfiles/rails-7.2.gemfile
 
 before_install: "gem update bundler"
 
