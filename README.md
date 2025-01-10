@@ -1,6 +1,6 @@
 # Devise Uncommon Password
 
-[![Build Status](https://travis-ci.org/HCLarsen/devise-uncommon_password.svg?branch=master)](https://travis-ci.org/HCLarsen/devise-uncommon_password)
+[![CI tests](https://github.com/HCLarsen/devise-uncommon_password/actions/workflows/ruby.yml/badge.svg)](https://github.com/HCLarsen/devise-uncommon_password/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/HCLarsen/devise-uncommon_password.svg)](https://codeclimate.com/github/HCLarsen/devise-uncommon_password)
 
 Devise::UncommonPassword is an extension for the [devise](https://github.com/heartcombo/devise) gem, which prevents users from signing up using one of the 100 most common passwords. The list is derived from the darkweb2017_top10K.txt found at: https://github.com/danielmiessler/SecLists/tree/master/Passwords.
