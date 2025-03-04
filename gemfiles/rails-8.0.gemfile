@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "rails", "~>8.0"
 gem "sprockets-rails"
 gem "devise", "~> 4.9.4"
-gem "sqlite", ">= 2.1"
+
+gem 'minitest-reporters', group: :test
 
 gemspec :path => "../"
