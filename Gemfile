@@ -14,5 +14,5 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 # gem "rails", "~>5.2"
-gem "devise", "~> 4"
+gem "devise", "~> 5"
 gem 'byebug'
